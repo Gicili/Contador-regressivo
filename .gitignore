@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <windows.h>//para usar o Sleep()
+ 
+
+	int main(){
+	
+	//Comando regionalizado
+	setlocale(LC_ALL,"Portuguese");
+    //título do programa
+    SetConsoleTitle("Cronometro regressivo");
+    
+	//declaração de variaveis
+    int sec=5;//segundos 
+    int min=00;//minutos
+    
+      
+    
+    printf("Iniciando contagem regressiva...");
+    Sleep(1000);
+    system("cls");//limpa a tela
+      
+    do {
+    
+        system("cls");//limpa a tela
+        
+        printf("Crônometro\n\n");
+        
+        printf("\n\t\t%dm:%ds\n",min,sec);
+        //por que se eu coloco 5s eu não consigo acompanhar o cronometro?
+    if(sec==10){
+        sec=0;
+        min--;
+        
+	}
+    //1000 refere-se ao milesimo de seg e precisa aparecer no codigo para que o usuario possa acompanhar a contagem regressiva
+    Sleep(1000);
+    system("cls");
+    sec--;
+	} 
+	while (sec>0);
+	printf("BUMMM!");
+}
+	
+	
+
